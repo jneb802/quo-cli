@@ -2,3 +2,4 @@ quo
 quo-cli
 *.exe
 .env
+.DS_Store
