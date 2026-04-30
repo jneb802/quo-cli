@@ -26,10 +26,10 @@ var sendCmd = &cobra.Command{
 
 		from := sendFrom
 		if from == "" {
-			from = os.Getenv("QUO_FROM")
+			from = getPhoneNumberID()
 		}
 		if from == "" {
-			return fmt.Errorf("--from is required (or set QUO_FROM)")
+			return fmt.Errorf("--from is required (or set QUO_PHONE_NUMBER_ID)")
 		}
 
 		if sendTo == "" {
@@ -55,7 +55,7 @@ var sendCmd = &cobra.Command{
 }
 
 func init() {
-	sendCmd.Flags().StringVar(&sendFrom, "from", "", "sender phone number or ID (env: QUO_FROM)")
+	sendCmd.Flags().StringVar(&sendFrom, "from", "", "sender phone number or ID (env: QUO_PHONE_NUMBER_ID)")
 	sendCmd.Flags().StringVar(&sendTo, "to", "", "recipient phone number (required)")
 	rootCmd.AddCommand(sendCmd)
 }

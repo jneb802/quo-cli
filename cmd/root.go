@@ -30,6 +30,10 @@ func getAPIKey() string {
 	return os.Getenv("QUO_API_KEY")
 }
 
+func getPhoneNumberID() string {
+	return os.Getenv("QUO_PHONE_NUMBER_ID")
+}
+
 func init() {
 	rootCmd.PersistentFlags().StringVar(&apiKey, "api-key", "", "API key (env: QUO_API_KEY)")
 	rootCmd.PersistentFlags().BoolVar(&jsonOutput, "json", false, "output raw JSON")

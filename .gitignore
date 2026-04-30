@@ -1,3 +1,4 @@
 quo
 quo-cli
 *.exe
+.env

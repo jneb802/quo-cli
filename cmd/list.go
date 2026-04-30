@@ -27,7 +27,7 @@ var listCmd = &cobra.Command{
 
 		pnID := listPhoneNumberID
 		if pnID == "" {
-			pnID = os.Getenv("QUO_PHONE_NUMBER_ID")
+			pnID = getPhoneNumberID()
 		}
 		if pnID == "" {
 			return fmt.Errorf("--phone-number-id is required (or set QUO_PHONE_NUMBER_ID)")
